@@ -9,22 +9,11 @@ import PricingHeader from "@/components/pricing/PricingHeader";
 import pricingData, { BillingCycle } from "@/data/pricingData";
 import { PricingStatus } from "@/components/pricing/PricingButtons";
 
-// Client component that uses useSearchParams
-function StatusFromParams() {
-  const searchParams = useSearchParams();
-  const statusParam = searchParams.get("status") as PricingStatus | null;
-  return statusParam || "ongoing-trial";
-}
-
-export default function PricingPage() {
+// Component that uses searchParams
+function PricingContent() {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
-  
-  // Wrap the component that uses useSearchParams in Suspense
-  const status: PricingStatus = (
-    <Suspense fallback="ongoing-trial">
-      <StatusFromParams />
-    </Suspense>
-  ) as unknown as PricingStatus;
+  const searchParams = useSearchParams();
+  const status: PricingStatus = (searchParams.get("status") as PricingStatus) || "ongoing-trial";
 
   // Get title and message based on status
   const getTitle = () => "Oversigt over abonnementer";
@@ -114,5 +103,25 @@ export default function PricingPage() {
         `}
       </Script>
     </div>
+  );
+}
+
+// Loading fallback component
+function PricingFallback() {
+  return (
+    <div className="bg-white py-[112px] sm:py-[84px]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+        <p>Indlæser abonnementer...</p>
+      </div>
+    </div>
+  );
+}
+
+// Main component that wraps PricingContent in Suspense
+export default function PricingPage() {
+  return (
+    <Suspense fallback={<PricingFallback />}>
+      <PricingContent />
+    </Suspense>
   );
 }
