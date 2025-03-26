@@ -9,17 +9,20 @@ import PricingHeader from "@/components/pricing/PricingHeader";
 import pricingData, { BillingCycle } from "@/data/pricingData";
 import { PricingStatus } from "@/components/pricing/PricingButtons";
 
+// Client component that uses useSearchParams
+function StatusFromParams() {
+  const searchParams = useSearchParams();
+  const statusParam = searchParams.get("status") as PricingStatus | null;
+  return statusParam || "ongoing-trial";
+}
+
 export default function PricingPage() {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
-  const SearchParamsWrapper = () => {
-    const searchParams = useSearchParams();
-    const statusParam = searchParams.get("status") as PricingStatus | null;
-    return statusParam || "ongoing-trial";
-  };
   
+  // Wrap the component that uses useSearchParams in Suspense
   const status: PricingStatus = (
     <Suspense fallback="ongoing-trial">
-      <SearchParamsWrapper />
+      <StatusFromParams />
     </Suspense>
   ) as unknown as PricingStatus;
 

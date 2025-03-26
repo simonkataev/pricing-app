@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Abonnementer og priser | Juris AI",
     description: "Vælg det abonnement, der passer til dine behov. Få adgang til juridiske databaser, AI-værktøjer og avancerede funktioner med Juris AI.",
-    url: "https://juris.dk/pricing",
     type: "website",
   },
 };

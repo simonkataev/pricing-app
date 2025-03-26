@@ -13,7 +13,6 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://juris.dk'),
   title: {
     default: "Juris AI | Legal AI Assistant",
     template: "%s | Juris AI"
@@ -34,7 +33,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "da_DK",
-    url: "https://juris.dk",
     siteName: "Juris AI",
     title: "Juris AI | Juridisk AI-assistent",
     description: "Juris AI er en juridisk AI-assistent, der giver adgang til domstolsafgørelser, ankesystemet og avancerede juridiske værktøjer.",
@@ -61,9 +59,6 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "default",
     title: "Juris AI",
-  },
-  alternates: {
-    canonical: "https://juris.dk",
   },
 };
 
