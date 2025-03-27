@@ -9,14 +9,14 @@ interface PricingCardProps {
   status?: PricingStatus;
 }
 
-const PricingCard: React.FC<PricingCardProps> = ({ 
-  tier, 
+const PricingCard: React.FC<PricingCardProps> = ({
+  tier,
   billingCycle,
-  status = "ongoing-trial"
+  status = "ongoing-trial",
 }) => {
   const price =
     billingCycle === "monthly" ? tier.price.monthly : tier.price.yearly;
-  
+
   const isPaidPlan = status === "paid-plan";
   const isDisabledButton = isPaidPlan && tier.id === "standard";
 
@@ -29,7 +29,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
       {tier.id === "pro" && status === "ongoing-trial" && (
         <div className="absolute top-[23px] right-[22px]">
           <div className="bg-purple text-white px-2 py-1 rounded font-outfit text-[11px] font-bold tracking-[0.22px] leading-normal text-center">
-            On Free Trial
+            Aktiv prøveperiode
           </div>
         </div>
       )}
@@ -39,12 +39,12 @@ const PricingCard: React.FC<PricingCardProps> = ({
           {tier.name}
         </h3>
 
-        <div className="flex items-end gap-4">
+        <div className="flex items-end justify-between">
           <span className="text-5xl font-bold text-black font-inter">
             {price} DKK
           </span>
           <span className="text-base text-grey mb-1 font-inter">
-            /{billingCycle === "monthly" ? "month" : "year"}
+            /{billingCycle === "monthly" ? "mnd ex moms" : "mnd ex år"}
           </span>
         </div>
       </div>
@@ -68,7 +68,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
           className={`w-full py-[10px] px-[20px] rounded-md text-sm font-medium font-roboto ${
             tier.id === "pro"
               ? "bg-black text-white hover:bg-opacity-90"
-              : "border border-light-gray text-black bg-white hover:bg-light-gray"
+              : "border border-[#1D1D21] text-black bg-white hover:bg-light-gray"
           } ${isDisabledButton ? "opacity-50 cursor-not-allowed" : ""}`}
         >
           {tier.buttonText}

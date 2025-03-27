@@ -26,7 +26,7 @@ const pricingData: PricingTier[] = [
       monthly: 316,
       yearly: 3160,
     },
-    description: 'Til dig med tidlighedsbehov behov. Få adgang til de basale funktioner.',
+    description: 'Til dig med tidlighedsbehov. Få adgang til de basale funktioner.',
     features: [
       { name: '250,000 tokens', included: true },
       { name: 'Adgang til Domstabasasen', included: true },

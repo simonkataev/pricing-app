@@ -2,7 +2,6 @@
 
 import React, { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import Script from "next/script";
 import BillingToggle from "@/components/pricing/BillingToggle";
 import PricingCard from "@/components/pricing/PricingCard";
 import PricingHeader from "@/components/pricing/PricingHeader";
@@ -62,46 +61,11 @@ function PricingContent() {
             Er I flere på arbejdspladsen, der ønsker licens? Kontakt os på
             <a href="mailto:support@juris.dk" className="text-blue-600 hover:underline ml-1">
               support@juris.dk
-            </a>, så vil vi kan give jer et skræddersyet tilbud med en
+            </a>, så vil vi give jer et skræddersyet tilbud med en
             fordelagtig pris.
           </p>
         </section>
       </div>
-
-      <Script id="pricing-schema" type="application/ld+json">
-        {`
-          {
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "name": "Juris AI",
-            "description": "Juridisk AI-assistent med adgang til domstolsafgørelser og juridiske værktøjer",
-            "offers": [
-              {
-                "@type": "Offer",
-                "name": "Standard",
-                "price": "${billingCycle === 'monthly' ? '316' : '3160'}",
-                "priceCurrency": "DKK",
-                "description": "Til dig med tidlighedsbehov behov. Få adgang til de basale funktioner.",
-                "availability": "https://schema.org/InStock",
-                "url": "https://juris.dk/pricing",
-                "priceValidUntil": "${new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0]}",
-                "billingDuration": "${billingCycle === 'monthly' ? 'P1M' : 'P1Y'}"
-              },
-              {
-                "@type": "Offer",
-                "name": "Pro",
-                "price": "${billingCycle === 'monthly' ? '716' : '7160'}",
-                "priceCurrency": "DKK",
-                "description": "Få adgang til alle funktioner - og flere tokens.",
-                "availability": "https://schema.org/InStock",
-                "url": "https://juris.dk/pricing",
-                "priceValidUntil": "${new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0]}",
-                "billingDuration": "${billingCycle === 'monthly' ? 'P1M' : 'P1Y'}"
-              }
-            ]
-          }
-        `}
-      </Script>
     </div>
   );
 }
