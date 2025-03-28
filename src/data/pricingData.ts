@@ -28,7 +28,7 @@ const pricingData: PricingTier[] = [
     },
     description: 'Til dig med tidlighedsbehov. Få adgang til de basale funktioner.',
     features: [
-      { name: '250,000 tokens', included: true },
+      { name: '250.000 tokens', included: true },
       { name: 'Adgang til Domstabasasen', included: true },
       { name: 'Adgang til Ankesystemet', included: true },
       { name: 'Adgang til Smart/AST', included: false },
@@ -45,7 +45,7 @@ const pricingData: PricingTier[] = [
     },
     description: 'Få adgang til alle funktioner - og flere tokens.',
     features: [
-      { name: '1,250,000 tokens', included: true },
+      { name: '1,250.000 tokens', included: true },
       { name: 'Adgang til Domstabasasen', included: true },
       { name: 'Adgang til Ankesystemet', included: true },
       { name: 'Adgang til Smart/AST', included: true },

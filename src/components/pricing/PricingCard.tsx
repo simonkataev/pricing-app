@@ -28,19 +28,19 @@ const PricingCard: React.FC<PricingCardProps> = ({
     >
       {tier.id === "pro" && status === "ongoing-trial" && (
         <div className="absolute top-[23px] right-[22px]">
-          <div className="bg-purple text-white px-2 py-1 rounded font-outfit text-[11px] font-bold tracking-[0.22px] leading-normal text-center">
+          <div className="bg-purple text-white px-2 py-1 rounded font-inter text-[11px] font-bold tracking-[0.22px] leading-normal text-center">
             Aktiv prøveperiode
           </div>
         </div>
       )}
 
       <div className={`flex flex-col gap-[16px]`}>
-        <h3 className="text-base font-medium text-gray-500 font-inter">
+        <h3 className="text-base font-medium text-black font-inter">
           {tier.name}
         </h3>
 
         <div className="flex items-end justify-between">
-          <span className="text-5xl font-bold text-black font-inter">
+          <span className="text-5xl font-extrabold text-black font-inter">
             {price} DKK
           </span>
           <span className="text-base text-grey mb-1 font-inter">
@@ -65,10 +65,10 @@ const PricingCard: React.FC<PricingCardProps> = ({
       <div className="mt-[6px]">
         <button
           disabled={isDisabledButton}
-          className={`w-full py-[10px] px-[20px] rounded-md text-sm font-medium font-roboto ${
+          className={`w-full py-[10px] px-[20px] rounded-md text-sm font-medium font-inter ${
             tier.id === "pro"
               ? "bg-black text-white hover:bg-opacity-90"
-              : "border border-[#1D1D21] text-black bg-white hover:bg-light-gray"
+              : "border border-black text-black bg-white hover:bg-light-gray"
           } ${isDisabledButton ? "opacity-50 cursor-not-allowed" : ""}`}
         >
           {tier.buttonText}

@@ -21,7 +21,6 @@ module.exports = {
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
-        roboto: ["Roboto", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],
       },
       boxShadow: {
