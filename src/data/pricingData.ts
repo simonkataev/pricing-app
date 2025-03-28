@@ -23,8 +23,8 @@ const pricingData: PricingTier[] = [
     id: 'standard',
     name: 'Standard',
     price: {
-      monthly: 316,
-      yearly: 3160,
+      monthly: 395,
+      yearly: 316,
     },
     description: 'Til dig med tidlighedsbehov. Få adgang til de basale funktioner.',
     features: [
@@ -40,8 +40,8 @@ const pricingData: PricingTier[] = [
     id: 'pro',
     name: 'Pro',
     price: {
-      monthly: 716,
-      yearly: 7160,
+      monthly: 895,
+      yearly: 716,
     },
     description: 'Få adgang til alle funktioner - og flere tokens.',
     features: [
