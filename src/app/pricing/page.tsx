@@ -25,7 +25,7 @@ function PricingContent() {
   };
 
   return (
-    <div className="bg-white py-[112px] sm:py-[84px]">
+    <div className="bg-white py-[112px] sm:py-[24px]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <header>
           <PricingHeader title={getTitle()} message={getMessage()} />
