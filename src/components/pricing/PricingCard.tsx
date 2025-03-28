@@ -41,7 +41,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
 
         <div className="flex items-end justify-between">
           <span className="text-5xl font-extrabold text-black font-inter">
-            {price} DKK
+            {price} <span className="text-4xl">DKK</span>
           </span>
           <span className="text-base text-grey mb-1 font-inter">
             /{billingCycle === "monthly" ? "mnd ex moms" : "mnd ex år"}
