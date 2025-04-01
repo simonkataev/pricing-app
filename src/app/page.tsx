@@ -1,4 +1,3 @@
-import Image from "next/image";
 import PricingButtons from "@/components/pricing/PricingButtons";
 import type { Metadata } from "next";
 import Script from "next/script";
