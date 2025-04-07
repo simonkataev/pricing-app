@@ -47,7 +47,7 @@ export default function LoadingScreen() {
       opacity: 1,
       transition: {
         y: { type: "spring", stiffness: 200, damping: 20 },
-        opacity: { duration: 0.8, ease: "easeInOut" },
+        opacity: { duration: 0.55, ease: "easeInOut" },
       },
     },
     exit: {
@@ -55,7 +55,7 @@ export default function LoadingScreen() {
       opacity: 0,
       transition: {
         y: { type: "spring", stiffness: 200, damping: 20 },
-        opacity: { duration: 0.8, ease: "easeInOut" },
+        opacity: { duration: 0.55, ease: "easeInOut" },
       },
     },
   };
@@ -77,7 +77,7 @@ export default function LoadingScreen() {
         </div>
 
         {/* Animated text container - fixed height to prevent layout shifts */}
-        <div className="text-gray-700 mt-[-10px] h-[24px] overflow-hidden flex justify-center">
+        <div className="text-gray-700 mt-[-10px] h-[24px] overflow-hidden flex justify-center text-[14px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentTextIndex}
