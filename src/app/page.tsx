@@ -68,7 +68,7 @@ export default async function Home() {
           __html: `
             setTimeout(() => {
               document.querySelector('.fixed').style.display = 'none';
-            }, 6000);
+            }, 12000);
           `,
         }}
       />
